@@ -9,6 +9,7 @@ def send_secure_report():
         return False
     
     print(f"✅ Đang kết nối tới Server với Key: {api_key[:4]}****")
+    print("da hoan thanh")
     print("🚀 Gửi báo cáo thành công!")
     return True
 
