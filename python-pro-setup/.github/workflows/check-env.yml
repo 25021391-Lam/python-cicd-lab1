@@ -1,0 +1,24 @@
+name: Lab 4 - Environment Readiness
+
+on: [push]
+
+jobs:
+  check-setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Verify Requirements
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+            echo "✅ Môi trường đã sẵn sàng!"
+          else
+            echo "❌ Lỗi: Thiếu file requirements.txt. Đồng nghiệp không thể chạy code của bạn!"
+            exit 1
+          fi
