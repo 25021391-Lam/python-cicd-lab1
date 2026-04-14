@@ -20,8 +20,7 @@ jobs:
           # Dừng lại nếu có lỗi cú pháp hoặc lỗi phong cách nghiêm trọng
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           # Cảnh báo các lỗi phong cách nhẹ (độ dài dòng, dấu cách...)
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 
-          --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Run Test with Pytest
         run: |
